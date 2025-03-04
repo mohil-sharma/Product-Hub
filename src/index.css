@@ -1,0 +1,127 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom CSS classes */
+  .hover-card-animation {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-card-animation:hover {
+    @apply shadow-lg transform translate-y-[-4px];
+  }
+  
+  .image-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .image-container img {
+    @apply transition-transform duration-700 ease-out;
+  }
+  
+  .image-container:hover img {
+    @apply transform scale-105;
+  }
+
+  .price-slider .MuiSlider-thumb {
+    @apply bg-primary border-2 border-white h-4 w-4;
+  }
+
+  .price-slider .MuiSlider-track {
+    @apply bg-primary border-0;
+  }
+
+  .price-slider .MuiSlider-rail {
+    @apply bg-secondary;
+  }
+
+  .animate-enter-bottom {
+    animation: enterFromBottom 0.5s forwards;
+  }
+
+  @keyframes enterFromBottom {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-stagger > * {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+  .animate-fade-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+  .animate-fade-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+  .animate-fade-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+  .animate-fade-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+  .animate-fade-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+  .animate-fade-stagger > *:nth-child(7) { animation-delay: 0.7s; }
+  .animate-fade-stagger > *:nth-child(8) { animation-delay: 0.8s; }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
